@@ -2,6 +2,9 @@ import os
 import time
 import sys
 
+credit = "TermGet was created by:\n- PizzaLovingNerd (main developer)\n- SudoLinux\n- The Feren OS Developer"
+#If you contribute, please add your name.
+
 if len(sys.argv) == 2:
 	if sys.argv[1] == "apt-get":
 		package = "apt-get"
@@ -18,8 +21,8 @@ print("Welcome to TermGet for Feren OS")
 time.sleep(1)
 clear()
 #Sets the variable 'setup' to False
-	
-while True: #Starts a loop
+
+while package != "pip": #Starts a loop
 	clear()
 	print("Please choose an action\n\n1. Search for packages\n2. Install an application\n3. Remove an application\n4. Update all packages\n5. Update Repo\n6. Clean\n7. Credits\n8. Exit")
 	user = input() #Asks for user input
@@ -84,10 +87,51 @@ while True: #Starts a loop
 		input("\nPress enter to continue")
 		
 	if user == "7": #Credits
-		print("TermGet was created by:\n- PizzaLovingNerd (main developer)\n- SudoLinux\n- The Feren OS Developer")
+		print(credit)
 		time.sleep(3)
-		#If you contribute, please add your name.
 		
 	if user == "8": #Quit
 		quit()
 
+while package == "pip": #Starts a loop
+	print("Please choose an action\n\n1. Search for packages\n2. Install an application\n3. Remove an application\n4. List packages installed with pip5. Credits\n6. Exit")
+	
+	if user == "1": #Search
+		clear()
+		user = input("Please enter search query: ")
+		print(" ")
+		os.system("sudo pip install " + user)
+		
+		input("\nPress enter to continue")
+		
+	if user == "2": #Install
+		clear()
+		user = input("Please enter which package(s) to install: ")
+		print("")
+		os.system("sudo pip search \"" + user + "\"")
+			
+		input("\nPress enter to continue")
+		
+	if user == "3": #Remove
+		clear()
+		user = input("Please enter which package(s) to remove: ")
+		print("")
+		os.system("sudo pip uninstall " + user)
+		
+	if user == "4": #List
+		clear()
+		print("")
+		user = input("Please choose an action:\n1. List all packages\n2. List outdated packages")
+		if user == "1":
+			os.system("sudo pip list ")
+		if user == "2":
+			os.system("sudo pip list --outdated")
+	
+	if user == "5": #Credits
+		print(credit)
+		time.sleep(3)
+		
+	if user == "6": #Quit
+		quit()
+	
+		
