@@ -1,4 +1,4 @@
-﻿# What is TermGet?
+﻿# What is TermGet for Feren OS?
 TermGet is a project made by PizzaLovingNerd
 TermGet is a frontend for:
 
@@ -25,38 +25,9 @@ TermGet is a frontend for:
  
 ## Where can I get TermGet?
 
-To get an alpha build, please clone the [TermGet GitHub repository](https://github.com/PizzaLovingNerd/TermGet)
+TermGet is currently being added to Feren OS. However, if you aren't running Feren OS, download it here:
+https://github.com/PizzaLovingNerd/TermGet
 
-To get a beta or release build, please go to the releases tab, of the [TermGet GitHub repository](https://github.com/PizzaLovingNerd/TermGet/releases)
-
-## How do I install TermGet on Linux
-
-First install python3. Once you've done that, download and unzip TermGet. Now open a terminal, and go to your downloads folder (Or where ever you have unzipped it). 
-
-If this is a first time install, type:
-
-    sh install.sh #Do not run as root
- If you are updating TermGet to a newer version, type:
- 
-    sh update.sh #Do not run as root
-    
-## First Time Setup On Linux
-After installing, run TermGet using
-
-    sudo termget
-
-you should get a message that looks like this:
-
-    Please choose a package manager
-
-    1. apt-get (For Debian, and Debian based systems.)
-    2. xbps (For Void Linux, and Void Linux based systems)
-    3. dnf (For Fedora, and Fedora based systems)
-    4. zypper (For OpenSUSE, and OpenSUSE based systems)
-    5. eopkg (For Solus, and Solus based systems)
-    6. pacman (For Arch, and Arch based systems)
-
-Choose your distribution's package manager using the number. My package manager is eopkg, so I would type "5" and press enter.
 
 ## How do I use TermGet on Linux
 
@@ -82,7 +53,7 @@ Once your package manager has been chosen, you will get a message like this:
     7. Exit
 
 *We will be using "eopkg" in the examples below.*
-*Results may vary for other package managers*
+*Feren OS uses apt, so the results will be different.*
 
 ### Searching for Packages
 
@@ -170,27 +141,16 @@ Cleaning helps save hard drive space. It does this by deleting cache, and deleti
 	  Do you want to continue? (yes/no)yes
 	  Removing package irrlicht
 	  Removed irrlicht
-		  [✓] Syncing filesystems    			                                            success
+		  [✓] Syncing filesystems    			                         success
 		  [✓] Updating dynamic library cache                                     success
 	
 	  Press enter to continue
 
-## Changing the package manager (on Linux)
+## Using PIP
 
-### Temporally
-
-To temporally change the package manager used, use an argument. For example, if I wanted to temporally change it to apt-get, I would type
-
-    sudo termget apt-get
-
-### Permanently
-run the following command in a terminal, then the first setup script will start next time you run termget.
-
-    rm -rf ~/.termget/termget-package-manager && > ~/.termget/termget-package-manager
-
-
-## Installing TermGet on Windows
-TermGet isn't out for Windows yet.
+To use pip, run TermGet with the argument "pip". To do this, open a terminal and type
+	
+	  sudo termget pip
 
 ## License:
 
