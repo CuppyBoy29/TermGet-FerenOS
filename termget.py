@@ -6,16 +6,12 @@ credit = "TermGet was created by:\n- PizzaLovingNerd (main developer)\n- SudoLin
 #If you contribute, please add your name.
 
 if len(sys.argv) == 2:
-	if sys.argv[1] == "apt-get":
-		package = "apt-get"
-	elif sys.argv[1] == "pip":
-		package = "pip"
-else:
-	package = "apt-get"
+	if sys.argv[1] == "apt-get": package = "apt-get"
+	elif sys.argv[1] == "pip": package = "pip"
+else: package = "apt-get"
 	
-def clear():
-	os.system("clear")
-	#Runs 'clear' over shell to clear the screen.
+def clear(): os.system("clear")
+#Runs 'clear' over shell to clear the screen.
 	
 print("Welcome to TermGet for Feren OS")
 time.sleep(1)
@@ -40,8 +36,7 @@ while package != "pip": #Starts a loop
 		user = input("Please enter which package(s) to install: ")
 		print("")
 		
-		if package == "apt-get":
-			os.system("sudo apt-get install " + user)
+		os.system("sudo apt-get install " + user)
 			
 		input("\nPress enter to continue")
 		
@@ -52,10 +47,8 @@ while package != "pip": #Starts a loop
 		if package == "apt-get":
 			user1 = input("How will you like to remove the package?\n\n1. remove, removes just the package (faster)\n2. purge, removes the package, and all it's configuration files (saves space)")
 			clear()
-			if user1 == "1":
-				os.system("sudo apt-get remove " + user)
-			if user1 == "2":
-				os.system("sudo apt-get purge " + user)
+			if user1 == "1": os.system("sudo apt-get remove " + user)
+			if user1 == "2": os.system("sudo apt-get purge " + user)
 				
 		input("\nPress enter to continue")
 		
@@ -90,8 +83,7 @@ while package != "pip": #Starts a loop
 		print(credit)
 		time.sleep(3)
 		
-	if user == "8": #Quit
-		quit()
+	if user == "8": quit()
 
 while package == "pip": #Starts a loop
 	print("Please choose an action\n\n1. Search for packages\n2. Install an application\n3. Remove an application\n4. List packages installed with pip5. Credits\n6. Exit")
@@ -122,16 +114,11 @@ while package == "pip": #Starts a loop
 		clear()
 		print("")
 		user = input("Please choose an action:\n1. List all packages\n2. List outdated packages")
-		if user == "1":
-			os.system("sudo pip list ")
-		if user == "2":
-			os.system("sudo pip list --outdated")
+		if user == "1": os.system("sudo pip list ")
+		if user == "2": os.system("sudo pip list --outdated")
 	
 	if user == "5": #Credits
 		print(credit)
 		time.sleep(3)
 		
-	if user == "6": #Quit
-		quit()
-	
-		
+	if user == "6": quit()
